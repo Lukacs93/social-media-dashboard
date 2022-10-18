@@ -5,6 +5,7 @@ import AddNewCard from "./components/addNewCard";
 import Header from './components/Header';
 import Card from './components/card';
 import { useState } from 'react'
+import Container from './components/container';
 
 function App() {
 
@@ -12,10 +13,11 @@ function App() {
         
     return (
         <div className="root">
-            <Header users={users}/>
+            <Container users={users}></Container>
+            {/* <Header users={users}/>
             {users.map((x, i)=>
             <Card user={x} icon={data.icon} key={i} followers={x.followers}/>
-            )}
+            )} */}
 
             <AddNewCard></AddNewCard>
         </div>

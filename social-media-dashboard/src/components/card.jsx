@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Card = ( {user, icon, followers, inc} ) => {
+const Card = ( {user, icon, followers, inc,handleTotal} ) => {
     const formatNumber = (number) => {
         let string = String(number).slice(0, 2);
         number = Number(string)
@@ -11,10 +11,12 @@ const Card = ( {user, icon, followers, inc} ) => {
     const handleClick = (e) => {
         if (e.target.innerHTML === '+') {
             setFollowers(curr => {
+                handleTotal(1)
                 return curr + 1
             })
         } else if (e.target.innerHTML === '-') {
             setFollowers(curr => {
+                handleTotal(-1)
                 return curr - 1
             })
         }
